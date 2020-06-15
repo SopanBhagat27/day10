@@ -23,3 +23,19 @@ do
 	((i++))
 done
 echo "Array values: "${array[@]}
+
+
+
+for (( i=o; i<=3; i++ ))
+do
+	for (( j=i+1; j<=3; j++ ))
+	do
+		if [ ${array[$i]} -lt ${array[$j]} ]
+		then
+			temp=${array[$i]}
+			array[$i]=${array[$j]}
+			array[$j]=$temp
+		fi
+	done
+done
+echo "descending order of array : " ${array[@]}
