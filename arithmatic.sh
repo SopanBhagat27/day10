@@ -5,5 +5,12 @@ read -p "enter the value of c " c
 #echo "value of a="$a 
 #echo "value of b="$b
 #echo "value of c="$c
-temp=$(( $c%$b+$c ))
-echo "a%b+c="$temp
+
+declare -A result
+result[0]=$(($a+$b*$c))
+result[1]=$(($a*$b+$c))
+result[2]=$(($c+$a/$b))
+result[3]=$(($a%$b+$c))
+
+
+echo "values: "${result[@]}
