@@ -13,4 +13,13 @@ result[2]=$(($c+$a/$b))
 result[3]=$(($a%$b+$c))
 
 
-echo "values: "${result[@]}
+echo "Dictonary values: "${result[@]} 
+
+declare -a array
+i=0
+while (( i<=3 ))
+do
+	array[$i]=${result[$i]}
+	((i++))
+done
+echo "Array values: "${array[@]}
